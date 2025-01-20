@@ -1,17 +1,17 @@
-# Locadora de Filmes com TypeORM
+# Movie Rental Service with TypeORM
 
-Essa API foi desenvolvida para atender às necessidades de um serviço de locação de filmes. Ela oferece endpoints para cadastrar novos filmes, listar filmes existentes, atualizar informações e remover filmes. Portanto, é um projeto que implementa uma plataforma para gerenciamento e locação de filmes, utilizando as capacidades do TypeORM e outras tecnologias relevantes.
+This API was developed to meet the needs of a movie rental service. It offers endpoints to register new movies, list existing movies, update information, and remove movies. Therefore, it is a project that implements a platform for movie management and rental, utilizing the capabilities of TypeORM and other relevant technologies.
 
-## Índice
+## Index
 
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Formato das Rotas](#formato-das-rotas)
-- [Regras da Aplicação](#regras-da-aplicação)
-- [Exemplos de Requisições](#exemplos-de-requisições)
+- [Technologies Used](#technologies-used)
+- [Route Format](#route-format)
+- [Application Rules](#application-rules)
+- [Request Examples](#request-examples)
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-Para o desenvolvimento deste projeto, foram utilizadas as seguintes tecnologias:
+The following technologies were used in the development of this project:
 
 [![Node.js](https://img.shields.io/badge/Node.js-v14.17.6-green)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-v4.4.4-blue)](https://www.typescriptlang.org/)
@@ -20,31 +20,30 @@ Para o desenvolvimento deste projeto, foram utilizadas as seguintes tecnologias:
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v8.11.3-blue)](https://www.postgresql.org/)
 [![zod](https://img.shields.io/badge/zod-v3.22.2-yellow)](https://github.com/vriad/zod)
 
-## Formato das Rotas
+## Route Format
 
-As rotas da API seguem o seguinte formato:
+The API routes follow this format:
 
-- **POST /movies**: Cadastra um novo filme.
-- **GET /movies**: Lista todos os filmes cadastrados com paginação.
-- **PATCH /movies/:id**: Atualiza os dados de um filme pelo ID.
-- **DELETE /movies/:id**: Deleta um filme pelo ID.
+- **POST /movies**: Registers a new movie.
+- **GET /movies**: Lists all registered movies with pagination.
+- **PATCH /movies/:id**: Updates a movie's data by ID.
+- **DELETE /movies/:id**: Deletes a movie by ID.
 
-## Regras da Aplicação
+## Application Rules
 
-- O código é escrito em TypeScript.
-- Utilização da biblioteca zod para serialização de dados.
-- Banco de dados PostgreSQL é utilizado para armazenar os dados.
-- TypeORM é utilizado para substituir PG e PG-Format.
-- Entidade "Movie" representa os filmes no sistema.
+- The code is written in TypeScript.
+- The zod library is used for data serialization.
+- PostgreSQL is used for storing data.
+- TypeORM is used to replace PG and PG-Format.
+- The "Movie" entity represents movies in the system.
 
-## Exemplos de Requisições
+## Request Examples
 
-### Cadastrar um Novo Filme
+### Register a New Movie
 
-**Método:** POST  
+**Method:** POST  
 **Endpoint:** /movies  
-**Dados de Envio:**
-
+**Request Body:**
 ```json
 {
   "id": 40,
@@ -54,7 +53,7 @@ As rotas da API seguem o seguinte formato:
 }
 ```
 
-**Resposta do Servidor:**
+**Server Response:**
 
 Status code: 201 CREATED
 
@@ -68,13 +67,13 @@ Status code: 201 CREATED
 }
 ```
 
-### Listar Filmes
+### List Movies
 
-**Método:** GET  
+**Method:** GET  
 **Endpoint:** /movies  
-**URL de Requisição:** http://localhost:3000/movies/?sort=price&order=desc&page=2&perPage=3
+**Request URL:** http://localhost:3000/movies/?sort=price&order=desc&page=2&perPage=3
 
-**Resposta do Servidor:**
+**Server Response:**
 
 Status code: 200 OK
 
@@ -109,12 +108,12 @@ Status code: 200 OK
 }
 ```
 
-### Atualizar Filme
+### Update Movie
 
-**Método:** PATCH  
+**Method:** PATCH  
 **Endpoint:** /movies/:id  
-**URL de Requisição:** http://localhost:3000/movies/4  
-**Dados de Envio:**
+**Request URL:** http://localhost:3000/movies/4  
+**Request Body:**
 
 ```json
 {
@@ -124,7 +123,7 @@ Status code: 200 OK
 }
 ```
 
-**Resposta do Servidor:**
+**Server Response:**
 
 Status code: 200 OK
 
@@ -138,10 +137,11 @@ Status code: 200 OK
 }
 ```
 
-### Deletar Filme
+### Delete Movie
 
-**Método:** DELETE  
+**Method:** DELETE  
 **Endpoint:** /movies/:id  
-**Resposta do Servidor:**
+**Server Response:**
 
 Status code: 204 NO CONTENT
+
